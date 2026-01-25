@@ -1,22 +1,22 @@
 # MFC4 Project: Compressed Sensing using ADMM with Limited Shrinkage Thresholding
 
 ## Team Members
-| Name | Roll Number |
-|------|-------------|
-| <Jignesh Sudheer> | <CB.SC.U4AIE24222> |
-| <Bhadhresh R P> | <CB.SC.U4AIE24208> |
-| <Shravan Rajesh Menon> | <CB.SC.U4AIE24253> |
-| <Gautham T> | <CB.SC.U4AIE24264> |
+
+Jignesh Sudheer - CB.SC.U4AIE24222
+Bhadhresh R P - CB.SC.U4AIE24208
+Shravan Rajesh Menon - CB.SC.U4AIE24253
+Gautham T -CB.SC.U4AIE24264 
 
 ---
 
+
+
 ## Base / Reference Paper
 
-**Primary Reference Paper**
+Yuan-Min Li and Hao Wang,  
+**"A New Limited Shrinkage Thresholding Iterative ADMM Algorithm for Compressed Sensing Signal Reconstruction,"**  
+*Signal Processing*, Elsevier, vol. 239, 2026, Article 110319.
 
-Yuan-Min Li, Hao Wang,  
-*A New Limited Shrinkage Thresholding Iterative ADMM Algorithm for Compressed Sensing Signal Reconstruction*,  
-**Signal Processing**, Elsevier, Vol. 239, 2026, Article 110319. :contentReference[oaicite:0]{index=0}
 
 This paper proposes an ADMM-based framework combined with a Limited Shrinkage Thresholding (LST) operator for solving ℓ₀-norm constrained sparse optimization problems and provides convergence analysis under RIP and Kurdyka–Łojasiewicz (KŁ) conditions.
 
