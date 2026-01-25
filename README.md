@@ -1,11 +1,13 @@
-# MFC4 Project: Compressed Sensing using ADMM with Limited Shrinkage Thresholding
+#  Compressed Sensing Reconstruction using ADMM 
 
 ## Team Members
 
-Jignesh Sudheer - CB.SC.U4AIE24222
-Bhadhresh R P - CB.SC.U4AIE24208
-Shravan Rajesh Menon - CB.SC.U4AIE24253
-Gautham T -CB.SC.U4AIE24264 
+
+- **Jignesh Sudheer** – CB.SC.U4AIE24222  
+- **Bhadhresh R P** – CB.SC.U4AIE24208  
+- **Shravan Rajesh Menon** – CB.SC.U4AIE24253  
+- **Gautham T** – CB.SC.U4AIE24264
+
 
 ---
 
@@ -66,17 +68,17 @@ Key aspects of the project include:
 
 ---
 
-## Repository Structure
+## Folders
 
-- `code/` : MATLAB implementation of compressed sensing using ADMM  
-- `base_paper/` : Reference research paper (PDF)  
-- `review_pdf/` : Literature review and related documentation  
+- `code` : MATLAB implementation of compressed sensing using ADMM  
+- `base_paper` : Reference research paper (PDF)  
+- `review_pdf` : Project documentation  
 
 ---
 
 ## Tools & Technologies
 
-- MATLAB (Algorithm implementation and simulation)
+- MATLAB (Algorithm implementation )
 - Git & GitHub (Version control and project management)
 
 
