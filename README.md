@@ -17,15 +17,14 @@ measurements by solving an ℓ₀-constrained optimization problem.
 - Hard thresholding for ℓ₀ constraint
 
 ## Files
-- `admm_lsts.m` : MATLAB implementation of the algorithm
-- `review.pdf` : Literature review document
-- `review_presentation.pptx` : Review presentation slides
+- `compressed.mlx` : MATLAB implementation of the algorithm
+- `Compressed_Sensing_review.pdf` : Document review
 
 ## Output
 The algorithm successfully recovers the sparse signal, matching both
 support and amplitude.
 
 ## Tools Used
-- MATLAB
-- GitHub
+- MATLAB (Algorithm implementation)
+- GitHub (Repository hosting and collaboration)
 
