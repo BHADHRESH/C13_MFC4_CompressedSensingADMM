@@ -80,7 +80,7 @@ A synthetic sparse signal with a small number of non-zero elements is generated.
 [1] Y.-M. Li and H. Wang,  
 “A New Limited Shrinkage Thresholding Iterative ADMM Algorithm for Compressed Sensing Signal Reconstruction,”  
 Signal Processing, Elsevier, 2026.  
-https://www.sciencedirect.com/
+https://doi.org/10.1016/j.sigpro.2025.110319
 
 ---
 
