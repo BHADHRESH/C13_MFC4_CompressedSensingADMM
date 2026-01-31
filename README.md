@@ -70,10 +70,9 @@ A synthetic sparse signal with a small number of non-zero elements is generated.
 
 ## Future Plans
 
-- Test the algorithm for different sparsity levels and measurement sizes.
-- Extend the implementation to handle noisy measurements.
-- Apply the method to simple real-world signals.
-- Improve result visualization and analysis.
+
+- Apply the proposed compressed sensing reconstruction algorithm to medical imaging problems such as MRI, where fast image acquisition and reduced sampling are critical.
+
 
 ---
 
