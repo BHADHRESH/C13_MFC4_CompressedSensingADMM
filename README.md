@@ -89,7 +89,7 @@ https://doi.org/10.1016/j.sigpro.2025.110319
 ## Repository Structure
 
 - `code` : MATLAB implementation of the ADMM + LST algorithm  
-- `doc` : Base paper, review material, figures, and presentation files  
+- `doc` : Base paper, review pdf, figure 
 - `README.md` : Project documentation
 
 
