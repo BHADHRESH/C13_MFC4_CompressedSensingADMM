@@ -2,8 +2,8 @@
 
 ---
 
-## Project Title
-Compressed Sensing Reconstruction using ADMM 
+# Project Title
+## Compressed Sensing Reconstruction using ADMM 
 
 ---
 
