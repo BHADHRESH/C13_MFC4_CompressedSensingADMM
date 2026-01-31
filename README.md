@@ -1,84 +1,94 @@
-#  Compressed Sensing Reconstruction using ADMM 
-## Team C-13
-## Team Members
-
-
-- **Jignesh Sudheer** – CB.SC.U4AIE24222  
-- **Bhadhresh R P** – CB.SC.U4AIE24208  
-- **Shravan Rajesh Menon** – CB.SC.U4AIE24253  
-- **Gautham T** – CB.SC.U4AIE24264
-
+# D4_MFC4_ADMM  
 
 ---
 
-
-
-## Base / Reference Paper
-
-Yuan-Min Li and Hao Wang,  
-**"A New Limited Shrinkage Thresholding Iterative ADMM Algorithm for Compressed Sensing Signal Reconstruction,"**  
-*Signal Processing*, Elsevier, vol. 239, 2026, Article 110319.
-
-
-This paper proposes an ADMM-based framework combined with a Limited Shrinkage Thresholding (LST) operator for solving ℓ₀-norm constrained sparse optimization problems and provides convergence analysis under RIP and Kurdyka–Łojasiewicz (KŁ) conditions.
+## Project Title
+Compressed Sensing Reconstruction using ADMM 
 
 ---
 
-## Project Outline
+## Member Details
 
-The objective of this project is to study and implement a **compressed sensing reconstruction algorithm** based on the concepts presented in the reference paper. The focus is on recovering a sparse signal from underdetermined linear measurements using an ADMM-based optimization framework with thresholding-based sparsity enforcement.
+- **Jignesh Sudheer**  
+  Roll No: CB.SC.U4AIE24222  
+  Email: <cb.sc.u4aie24222@cb.students.amrita.edu>
 
-Key aspects of the project include:
-- Understanding compressed sensing and sparsity assumptions
-- ℓ₀-norm constrained problem formulation
-- Use of ADMM for variable splitting and constrained optimization
-- Application of Limited Thresholding (LT) and hard thresholding
-- MATLAB-based implementation and validation
+- **Bhadhresh R P**  
+  Roll No: CB.SC.U4AIE24208  
+  Email: <cb.sc.u4aie24208@cb.students.amrita.edu>
 
----
+- **Shravan Rajesh Menon**  
+  Roll No: CB.SC.U4AIE24253  
+  Email: <cb.sc.u4aie24253@cb.students.amrita.edu>
 
-## Updates
-
-1. Studied the fundamentals of compressed sensing and sparsity-based signal recovery.
-2. Understood the ℓ₀-constrained compressed sensing formulation discussed in the base paper.
-3. Reviewed the ADMM framework and the role of Limited Shrinkage Thresholding (LST).
-4. Implemented a basic ADMM-based compressed sensing reconstruction algorithm in MATLAB.
-5. Verified sparse signal recovery through simulation and visual comparison of original and reconstructed signals.
+- **Gautham T**  
+  Roll No: CB.SC.U4AIE24264  
+  Email: <cb.sc.u4aie24264@cb.students.amrita.edu>
 
 ---
 
-## Challenges / Issues Faced
+## Objective
 
-- Understanding the non-convex nature of ℓ₀-norm constrained optimization.
-- Interpreting the role of LST and its difference from hard and soft thresholding.
-- Relating theoretical convergence conditions (RIP, stationarity) to practical implementation.
-- Selecting appropriate parameters such as step size and threshold value.
-- Ensuring numerical stability during iterative reconstruction.
+The objective of this project is to study and implement a compressed sensing reconstruction algorithm using the Alternating Direction Method of Multipliers (ADMM) combined with Limited Shrinkage Thresholding (LST) for recovering sparse signals from underdetermined linear measurements.
+
+---
+
+## Motivation / Why the Project is Interesting
+
+Compressed sensing allows signal reconstruction using fewer measurements by exploiting sparsity. This is important in applications where acquiring measurements is expensive or limited. The project is interesting because it combines optimization techniques with sparsity-promoting thresholding methods to solve an ill-posed reconstruction problem.
+
+---
+
+## Methodology
+
+### Mathematical Techniques Used
+
+- Sparse signal modeling
+- ℓ₀-norm based sparsity concept
+- Limited Shrinkage Thresholding (LST)
+- Alternating Direction Method of Multipliers (ADMM)
+- Gradient-based iterative updates
+- ℓ₂-norm based reconstruction error analysis
+
+### Demonstration Using a Toy Example
+
+A synthetic sparse signal with a small number of non-zero elements is generated. Random linear measurements are obtained using a sensing matrix. The ADMM-based algorithm with LST is applied iteratively to reconstruct the sparse signal. The reconstructed signal is compared with the original signal to verify recovery performance.
+
+---
+
+## Results & Discussion
+
+- Successful reconstruction of sparse signals from limited measurements is observed.
+- The reconstructed signal closely matches the original sparse signal.
+- Convergence behavior shows a decreasing reconstruction error with iterations.
+- Sensitivity of the reconstruction to the LST threshold parameter (λ) is analyzed, showing that proper parameter selection is important.
+- The observed results are consistent with the expected behavior discussed in the base paper.
 
 ---
 
 ## Future Plans
 
-- Extend the implementation to include noisy measurement scenarios.
-- Incorporate more elements from the base paper such as LTP-stationary concepts.
-- Compare performance with ℓ₁-based sparse recovery methods.
-- Evaluate reconstruction quality using metrics such as MSE and SNR.
-- Analyze convergence behavior for different sparsity levels and parameters.
-- Prepare final report and presentation for project evaluation.
+- Test the algorithm for different sparsity levels and measurement sizes.
+- Extend the implementation to handle noisy measurements.
+- Apply the method to simple real-world signals.
+- Improve result visualization and analysis.
 
 ---
 
-## Folders
+## References
 
-- `code` : MATLAB implementation of compressed sensing using ADMM  
-- `base_paper` : Reference research paper (PDF)  
-- `review_pdf` : Project documentation  
+[1] Y.-M. Li and H. Wang,  
+“A New Limited Shrinkage Thresholding Iterative ADMM Algorithm for Compressed Sensing Signal Reconstruction,”  
+Signal Processing, Elsevier, 2026.  
+https://www.sciencedirect.com/
 
 ---
 
-## Tools & Technologies
+## Repository Structure
 
-- MATLAB (Algorithm implementation )
-- Git & GitHub (Version control and project management)
+- `code` : MATLAB implementation of the ADMM + LST algorithm  
+- `doc` : Base paper, review material, figures, and presentation files  
+- `README.md` : Project documentation
+
 
 
