@@ -146,6 +146,127 @@ $$
 
 The term $\frac{1}{2}||y-b||^2$ is removed since it does not depend on $x$.
 
+### 5. Combining the Linear and Quadratic Terms
+
+Now consider the terms
+
+$$
+z^{kT}(Ax - y^k) + \frac{\rho}{2}\|Ax - y^k\|^2
+$$
+
+Let
+
+$$
+u = Ax - y^k
+$$
+
+Then the expression becomes
+
+$$
+z^{kT}u + \frac{\rho}{2}u^Tu
+$$
+
+Factor $\frac{\rho}{2}$:
+
+$$
+\frac{\rho}{2}\left(u^Tu + \frac{2}{\rho}z^{kT}u\right)
+$$
+
+Using the identity
+
+$$
+\|u + a\|^2 = u^Tu + 2a^Tu + a^Ta
+$$
+
+choose
+
+$$
+a = \frac{z^k}{\rho}
+$$
+
+so that
+
+$$
+u^Tu + \frac{2}{\rho}z^{kT}u =
+\left\|u + \frac{z^k}{\rho}\right\|^2 -
+\left\|\frac{z^k}{\rho}\right\|^2
+$$
+
+The second term is constant with respect to $x$, so it can be ignored.
+
+Substituting back $u = Ax - y^k$:
+
+$$
+Ax - y^k + \frac{z^k}{\rho}
+=
+Ax - \left(y^k - \frac{z^k}{\rho}\right)
+$$
+
+Define
+
+$$
+b_k = y^k - \frac{z^k}{\rho}
+$$
+
+Thus
+
+$$
+z^{kT}(Ax - y^k) + \frac{\rho}{2}\|Ax - y^k\|^2
+=
+\frac{\rho}{2}\|Ax - b_k\|^2
+$$
+
+---
+
+### 6. Simplified x-Subproblem
+
+The x-update becomes
+
+$$
+x^{k+1} =
+\arg\min_x
+\left(
+\frac{\rho}{2}\|Ax - b_k\|^2 + \lambda\|x\|_0
+\right)
+$$
+
+This is a **sparse least-squares problem**.
+
+---
+
+### 7. Gradient of the Quadratic Term
+
+Consider
+
+$$
+f(x) = \|Ax - b_k\|^2
+$$
+
+The gradient is
+
+$$
+\nabla f(x) = A^T(Ax - b_k)
+$$
+
+because the derivative of $Ax$ with respect to $x$ produces $A^T$.
+
+---
+
+### 8. Gradient Descent Update
+
+Using gradient descent,
+
+$$
+x_{\text{temp}} =
+x_k - \frac{1}{v} A^T(Ax_k - b_k)
+$$
+
+where
+
+- $x_k$ is the estimate at iteration $k$
+- $v$ controls the step size.
+
+
 ### Demonstration Using a Toy Example
 
 A synthetic sparse signal with a small number of non-zero elements is generated. Random linear measurements are obtained using a sensing matrix. The ADMM-based algorithm with LST is applied iteratively to reconstruct the sparse signal. The reconstructed signal is compared with the original signal to verify recovery performance.
