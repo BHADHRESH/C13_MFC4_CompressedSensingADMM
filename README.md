@@ -214,7 +214,7 @@ gives
 $$
 \frac{\rho}{2}
 \left(
-\left\|u+\frac{z^k}{\rho}\right\|^2 -
+\left\|\|u+\frac{z^k}{\rho}\right\|\|^2 -
 \left\|\frac{z^k}{\rho}\right\|^2
 \right)
 $$
