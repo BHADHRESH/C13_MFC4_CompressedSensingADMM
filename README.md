@@ -221,12 +221,12 @@ $$
 
 ---
 
-#### Step 4.4: Separate the Terms
+#### Separate the Terms
 
 Expanding the expression gives
 
 $$
-\frac{\rho}{2}\||u + \frac{z^k}{\rho}\||^2 - \frac{\rho}{2}\left\||\frac{z^k}{\rho}\right\||^2
+\frac{\rho}{2}\|u + \frac{z^k}{\rho}\|^2 - \frac{\rho}{2}\left\|\frac{z^k}{\rho}\right\|^2
 $$
 
 The second term does **not depend on $x$**, so it is constant.
@@ -235,7 +235,7 @@ In optimization, constants do not affect the minimization, so this term can be i
 
 ---
 
-#### Step 4.5: Final Simplified Form
+#### Final Simplified Form
 
 Thus we keep only
 
