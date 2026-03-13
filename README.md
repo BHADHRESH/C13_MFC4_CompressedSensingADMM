@@ -53,7 +53,7 @@ We formulate the image deblurring problem as a sparse reconstruction task and so
 
 ## Objective
 
-The objective of this project is to study and implement a compressed sensing reconstruction algorithm using the Alternating Direction Method of Multipliers (ADMM) combined with Limited Shrinkage Thresholding (LST) for recovering sparse signals from underdetermined linear measurements.
+The objective of this project is to implement an ADMM-based sparse reconstruction for recovering images degraded by blur and noise. The problem is formulated using a compressed sensing optimization model, where the original image is reconstructed by minimizing a data fidelity term with a sparsity constraint. The ILSTAT-ADMM algorithm is used to iteratively estimate the image while enforcing sparsity, and its performance is evaluated using metrics like PSNR.
 
 ---
 
@@ -631,12 +631,15 @@ $$
 
 Higher PSNR indicates better reconstruction quality.
 
-
+Results observed
 - Successful reconstruction of sparse signals from limited measurements is observed.
 - The reconstructed signal closely matches the original sparse signal.
 - Convergence behavior shows a decreasing reconstruction error with iterations.
 - Sensitivity of the reconstruction to the LST threshold parameter (λ) is analyzed, showing that proper parameter selection is important.
 - The observed results are consistent with the expected behavior discussed in the base paper.
+
+
+## Reuslts and plots
 
 ## Tree Image Reconstruction
 
@@ -658,12 +661,18 @@ Higher PSNR indicates better reconstruction quality.
   <img src="output_and_results/plot_2.png" width="350"/>
 </p>
 
+---
+
 ## Computational Performance
 
 - Platform : Laptop
 - Hardware : cpu
 - time taken for execution : 65.96 seconds
 - Programming language : Matlab
+
+## Conclusion
+
+This project implemented an image reconstruction approach using the **ILSTAT-ADMM algorithm** to solve sparse optimization problems in compressed sensing. Image degradation was modeled using **Gaussian blur and noise**, and the reconstruction was performed through the ADMM framework with iterative (x), (y), and (z) updates. Experimental results on multiple images show that the proposed method improves reconstruction quality compared to the **Wiener filter**, achieving higher PSNR values and better visual restoration. The results demonstrate the effectiveness of **ADMM-based sparse reconstruction methods** for image deblurring problems.
 
 ## Future Plans
 
@@ -684,8 +693,8 @@ https://doi.org/10.1016/j.sigpro.2025.110319
 
 ## Repository Structure
 
-- `code` : MATLAB implementation of the ADMM + LST algorithm  
-- `doc` : Base paper, review pdf, figure 
+- `code` : MATLAB implementation of the ADMM + LST algorithm and ILSTAT
+- `doc` : Base paper, review pdf  
 - `README.md` : Project documentation
 
 
