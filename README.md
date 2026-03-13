@@ -168,6 +168,7 @@ The first term ensures data consistency while the second term enforces sparsity.
 - Alternating Direction Method of Multipliers (ADMM)
 - Gradient-based iterative updates
 
+---
 
 ### ADMM Formulation
 ### x-Update Derivation (ILSTAT-ADMM)
@@ -189,7 +190,7 @@ where
 
 The first term enforces **data fidelity**, while the second promotes **sparsity**.
 
----
+
 
 #### 2. Variable Splitting
 
@@ -216,7 +217,7 @@ This separates
 - the **data fidelity term** (depends on $y$)
 - the **sparsity term** (depends on $x$).
 
----
+
 
 #### 3. Augmented Lagrangian
 
@@ -268,7 +269,7 @@ The term $\frac{1}{2}||y-b||^2$ is removed since it does not depend on $x$.
 Now consider the terms
 
 $$
-z^{kT}(Ax - y^k) + \frac{\rho}{2}\|Ax - y^k\|^2
+z^{kT}(Ax - y^k) + \frac{\rho}{2}\lvec Ax - y^k \rvec^2
 $$
 
 Let
@@ -292,7 +293,7 @@ $$
 Using the identity
 
 $$
-\|u + a\|^2 = u^Tu + 2a^Tu + a^Ta
+\lvec u + a \rvec^2 = u^Tu + 2a^Tu + a^Ta
 $$
 
 choose
