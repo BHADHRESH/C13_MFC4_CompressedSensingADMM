@@ -194,6 +194,90 @@ $$
 
 The second term is constant with respect to $x$, so it can be ignored.
 
+#### Multiply Back by $\frac{\rho}{2}$
+
+Recall that we obtained
+
+$$
+\frac{\rho}{2}\left(u^Tu + \frac{2}{\rho}z^{kT}u\right)
+$$
+
+Substituting the completed square expression
+
+$$
+u^Tu + \frac{2}{\rho}z^{kT}u =
+\left\|u+\frac{z^k}{\rho}\right\|^2 -
+\left\|\frac{z^k}{\rho}\right\|^2
+$$
+
+gives
+
+$$
+\frac{\rho}{2}
+\left(
+\left\|u+\frac{z^k}{\rho}\right\|^2 -
+\left\|\frac{z^k}{\rho}\right\|^2
+\right)
+$$
+
+---
+
+#### Separate the Terms
+
+Expanding gives
+
+$$
+\frac{\rho}{2}\left\|u+\frac{z^k}{\rho}\right\|^2
+-
+\frac{\rho}{2}\left\|\frac{z^k}{\rho}\right\|^2
+$$
+
+The second term does **not depend on $x$**, so it is constant.
+
+In optimization, constants do not affect the minimization, so this term can be ignored.
+
+---
+
+#### Final Simplified Form
+
+Thus we keep only
+
+$$
+\frac{\rho}{2}\left\|u+\frac{z^k}{\rho}\right\|^2
+$$
+
+Substituting
+
+$$
+u = Ax - y^k
+$$
+
+gives
+
+$$
+u + \frac{z^k}{\rho}
+=
+Ax - y^k + \frac{z^k}{\rho}
+$$
+
+Rewrite as
+
+$$
+Ax - \left(y^k - \frac{z^k}{\rho}\right)
+$$
+
+Define
+
+$$
+b_k = y^k - \frac{z^k}{\rho}
+$$
+
+Therefore the expression becomes
+
+$$
+\frac{\rho}{2}\|Ax - b_k\|^2
+$$
+
 Substituting back $u = Ax - y^k$:
 
 $$
