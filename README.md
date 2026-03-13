@@ -270,7 +270,7 @@ $$
 Therefore the expression becomes
 
 $$
-\frac{\rho}{2}\|Ax - b_k\|^2
+\frac{\rho}{2}\||Ax - b_k\||^2
 $$
 
 
