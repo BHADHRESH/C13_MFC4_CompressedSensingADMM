@@ -204,9 +204,7 @@ $$
 Substituting the completed square expression
 
 $$
-u^Tu + \frac{2}{\rho}z^{kT}u =
-\left\|u+\frac{z^k}{\rho}\right\|^2 -
-\left\|\frac{z^k}{\rho}\right\|^2
+u^Tu + \frac{2}{\rho}z^{kT}u = \left\|u + \frac{z^k}{\rho}\right\|^2 - \left\|\frac{z^k}{\rho}\right\|^2
 $$
 
 gives
@@ -214,7 +212,7 @@ gives
 $$
 \frac{\rho}{2}
 \left(
-\left\|\|u+\frac{z^k}{\rho}\right\|\|^2 -
+\left\|u+\frac{z^k}{\rho}\right\|^2 -
 \left\|\frac{z^k}{\rho}\right\|^2
 \right)
 $$
