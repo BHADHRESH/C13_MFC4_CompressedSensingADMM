@@ -221,15 +221,12 @@ $$
 
 ---
 
-#### Separate the Terms
+#### Step 4.4: Separate the Terms
 
-Expanding gives
-
-$$
-\frac{\rho}{2}\left\|u+\frac{z^k}{\rho}\right\|^2
-$$
+Expanding the expression gives
 
 $$
+\frac{\rho}{2}\left\|u + \frac{z^k}{\rho}\right\|^2
 -
 \frac{\rho}{2}\left\|\frac{z^k}{\rho}\right\|^2
 $$
@@ -240,31 +237,27 @@ In optimization, constants do not affect the minimization, so this term can be i
 
 ---
 
-#### Final Simplified Form
+#### Step 4.5: Final Simplified Form
 
 Thus we keep only
 
 $$
-\frac{\rho}{2}\left\|u+\frac{z^k}{\rho}\right\|^2
+\frac{\rho}{2}\left\|u + \frac{z^k}{\rho}\right\|^2
 $$
 
-Substituting
+Now substitute
 
 $$
 u = Ax - y^k
 $$
 
-gives
+Then
 
 $$
-\begin{aligned}
-\frac{\rho}{2}\left\|u+\frac{z^k}{\rho}\right\|^2
--
-\frac{\rho}{2}\left\|\frac{z^k}{\rho}\right\|^2
-\end{aligned}
+u + \frac{z^k}{\rho} = Ax - y^k + \frac{z^k}{\rho}
 $$
 
-Rewrite as
+Rewrite this as
 
 $$
 Ax - \left(y^k - \frac{z^k}{\rho}\right)
