@@ -3,7 +3,7 @@
 ---
 
 # Project Title
-## Compressed Sensing Reconstruction using ADMM 
+## Compressed Sensing Reconstruction using ADMM and image deblurring
 
 ---
 
