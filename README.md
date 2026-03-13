@@ -29,6 +29,28 @@
 
 ---
 
+## Introduction
+
+In imaging systems, the captured image is often degraded by blur and noise during acquisition.
+
+The degradation model can be written as
+
+$$
+b = Ax + n
+$$
+
+where
+
+- $x$ : original image  
+- $A$ : blur operator  
+- $b$ : observed blurred image  
+- $n$ : noise.
+
+Recovering the original image from blurred observations is an ill-posed inverse problem.
+
+Compressed sensing provides a framework for recovering signals from incomplete measurements by exploiting sparsity.  
+We formulate the image deblurring problem as a sparse reconstruction task and solve it using the 
+
 ## Objective
 
 The objective of this project is to study and implement a compressed sensing reconstruction algorithm using the Alternating Direction Method of Multipliers (ADMM) combined with Limited Shrinkage Thresholding (LST) for recovering sparse signals from underdetermined linear measurements.
@@ -72,6 +94,43 @@ where
 Recovering the original image from blurred observations can therefore be formulated as a compressed sensing reconstruction problem.  
 The ILSTAT-ADMM algorithm is used to solve this optimization problem while enforcing sparsity using Limited Shrinkage Thresholding (LST).
 
+---
+
+## Gaussian Blur and Convolution
+
+In image deblurring, blur is modeled as a convolution between the original image and a blur kernel.
+
+$$
+b = h * x
+$$
+
+where
+
+- $x$ is the original image  
+- $h$ is the blur kernel  
+- $b$ is the blurred image.
+
+In this project, a **Gaussian kernel** is used to simulate blur.
+
+The Gaussian function is
+
+$$
+h(x,y) =
+\frac{1}{2\pi\sigma^2}
+e^{-\frac{x^2+y^2}{2\sigma^2}}
+$$
+
+Each pixel in the blurred image becomes a weighted average of neighboring pixels, which spreads intensity and removes high-frequency details.
+
+This blur operation corresponds to the linear operator $A$ in the model
+
+$$
+b = Ax + n
+$$
+
+---
+
+
 ## Difference Between Blur and Noise
 
 | Property | Blur | Noise |
@@ -83,6 +142,22 @@ The ILSTAT-ADMM algorithm is used to solve this optimization problem while enfor
 | Appearance | Smooth or out-of-focus image | Grainy image |
 | Example Types | Gaussian blur, motion blur, defocus blur | Gaussian noise, salt & pepper noise, Poisson noise |
 
+---
+
+## Compressed Sensing Formulation
+
+Compressed sensing exploits sparsity to recover signals from fewer measurements.
+
+The reconstruction problem is written as
+
+$$
+\min_x \|Ax - b\|^2 + \lambda \|x\|_0
+$$
+
+The first term ensures data consistency while the second term enforces sparsity.
+
+---
+
 ## Methodology
 
 ### Mathematical Techniques Used
@@ -92,7 +167,7 @@ The ILSTAT-ADMM algorithm is used to solve this optimization problem while enfor
 - Limited Shrinkage Thresholding (LST)
 - Alternating Direction Method of Multipliers (ADMM)
 - Gradient-based iterative updates
-- ℓ₂-norm based reconstruction error analysis
+
 
 ### ADMM Formulation
 ### x-Update Derivation (ILSTAT-ADMM)
@@ -536,6 +611,25 @@ A synthetic sparse signal with a small number of non-zero elements is generated.
 ---
 
 ## Results & Discussion
+
+## Evaluation Metrics
+
+Reconstruction quality is evaluated using Peak Signal-to-Noise Ratio (PSNR).
+
+First compute Mean Squared Error:
+
+$$
+MSE = \frac{1}{N}\sum (x - x_{rec})^2
+$$
+
+Then
+
+$$
+PSNR = 10\log_{10}\frac{MAX^2}{MSE}
+$$
+
+Higher PSNR indicates better reconstruction quality.
+
 
 - Successful reconstruction of sparse signals from limited measurements is observed.
 - The reconstructed signal closely matches the original sparse signal.
