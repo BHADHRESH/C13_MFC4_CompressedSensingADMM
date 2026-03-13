@@ -188,8 +188,8 @@ so that
 
 $$
 u^Tu + \frac{2}{\rho}z^{kT}u =
-\left\|u + \frac{z^k}{\rho}\right\|^2 -
-\left\|\frac{z^k}{\rho}\right\|^2
+\|u + \frac{z^k}{\rho}\|^2 -
+\|\frac{z^k}{\rho}\|^2
 $$
 
 
