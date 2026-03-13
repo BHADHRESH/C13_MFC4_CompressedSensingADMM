@@ -332,6 +332,8 @@ where
 - $x_k$ is the estimate at iteration $k$
 - $v$ controls the step size.
 
+---
+
 ### 9. Enforcing Sparsity
 
 The sparsity term $\lambda |x|_0$ is handled using a shrinkage operator:
@@ -342,7 +344,6 @@ $$
 
 This step removes small coefficients and preserves significant ones.
 
----
 
 ### 10. Final x-Update
 
@@ -353,6 +354,8 @@ x_{k+1} =
 x_k - \frac{1}{v} A^T (Ax_k - b_k)
 \right)
 $$
+
+---
 
 ### y-Update Derivation
 
@@ -365,15 +368,8 @@ $$
 From the augmented Lagrangian
 
 $$
-L(x,y,z)
-=
-\frac{1}{2}|y-b|^2
-+
-\lambda |x|_0
-+
-z^T(Ax-y)
-+
-\frac{\rho}{2}|Ax-y|^2
+L(x,y,z) =
+\frac{1}{2}|y-b|^2 + \lambda |x|_0 + z^T(Ax-y) + \frac{\rho}{2}|Ax-y|^2
 $$
 
 the term $\lambda |x|_0$ does not depend on $y$, so it can be ignored.
@@ -417,7 +413,6 @@ $$
 (y-b) - z^k - \rho(Ax^{k+1}-y) = 0
 $$
 
----
 
 ### Rearranging Terms
 
@@ -436,8 +431,7 @@ $$
 ### Final y-Update
 
 $$
-y^{k+1}
-=
+y^{k+1} =
 \frac{b + z^k + \rho Ax^{k+1}}{1+\rho}
 $$
 
