@@ -354,6 +354,8 @@ x_k - \frac{1}{v} A^T (Ax_k - b_k)
 \right)
 $$
 
+
+
 ### Demonstration Using a Toy Example
 
 A synthetic sparse signal with a small number of non-zero elements is generated. Random linear measurements are obtained using a sensing matrix. The ADMM-based algorithm with LST is applied iteratively to reconstruct the sparse signal. The reconstructed signal is compared with the original signal to verify recovery performance.
