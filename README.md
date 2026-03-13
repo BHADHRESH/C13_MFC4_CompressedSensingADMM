@@ -654,8 +654,8 @@ Higher PSNR indicates better reconstruction quality.
 ## plots
 
 <p align="center">
-  <img src="output_and_results/plot_1.png" width="300"/>
-  <img src="output_and_results/plot_2.png" width="300"/>
+  <img src="output_and_results/plot_1.png" width="350"/>
+  <img src="output_and_results/plot_2.png" width="350"/>
 </p>
 
 ## Computational Performance
