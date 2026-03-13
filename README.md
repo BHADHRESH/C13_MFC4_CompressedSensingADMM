@@ -651,6 +651,13 @@ Higher PSNR indicates better reconstruction quality.
 ![Cameraman Reconstruction](output_and_results/result_1.png)
 ---
 
+## plots
+
+<p align="center">
+  <img src="output_and_results/plot_1.png" width="300"/>
+  <img src="output_and_results/plot_2.png" width="300"/>
+</p>
+
 ## Computational Performance
 
 - Platform : Laptop
