@@ -512,7 +512,7 @@ $$
 Derivative of each term with respect to $y$:
 
 $$
-\nabla_y \left(\frac12 \lVert y-b\rVert ^2) = y-b
+\nabla_y \left(\frac{1}{2}\lVert y-b\rVert^2\right) = y-b
 $$
 
 $$
