@@ -269,7 +269,7 @@ The term $\frac{1}{2}||y-b||^2$ is removed since it does not depend on $x$.
 Now consider the terms
 
 $$
-z^{kT}(Ax - y^k) + \frac{\rho}{2}||Ax - y^k||^2
+z^{kT}(Ax - y^k) + \frac{\rho}{2} \lVert Ax - y^k \rVert^2
 $$
 
 Let
@@ -322,7 +322,7 @@ $$
 Substituting the completed square expression
 
 $$
-u^Tu + \frac{2}{\rho}z^{kT}u = \left\|u + \frac{z^k}{\rho}\right\|^2 - \left\|\frac{z^k}{\rho}\right\|^2
+u^Tu + \frac{2}{\rho}z^{kT}u = \lVert u + \frac{z^k}{\rho} \rVert^2 - \lVert \frac{z^k}{\rho}\rVert^2
 $$
 
 gives
