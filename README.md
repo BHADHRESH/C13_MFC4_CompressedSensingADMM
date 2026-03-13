@@ -226,9 +226,7 @@ $$
 Expanding the expression gives
 
 $$
-\frac{\rho}{2}\left\|u + \frac{z^k}{\rho}\right\|^2
--
-\frac{\rho}{2}\left\|\frac{z^k}{\rho}\right\|^2
+\frac{\rho}{2}\|u + \frac{z^k}{\rho}\|^2 - \frac{\rho}{2}\left\|\frac{z^k}{\rho}\right\|^2
 $$
 
 The second term does **not depend on $x$**, so it is constant.
