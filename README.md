@@ -512,7 +512,7 @@ $$
 Derivative of each term with respect to $y$:
 
 $$
-\nabla_y \left(\frac12 \lVert y-b|^2\rVert) = y-b
+\nabla_y \left(\frac12 \lVert y-b\rVert ^2) = y-b
 $$
 
 $$
@@ -641,6 +641,14 @@ Higher PSNR indicates better reconstruction quality.
 ## Tree Image Reconstruction
 
 ![Tree Reconstruction](output_and_results/result_2.png)
+
+## Coins Image Reconstruction
+
+![Coins Reconstruction](output_and_results/result_3.png)
+
+## Cameraman Image Reconstruction
+
+![Cameraman Reconstruction](output_and_results/result_1.png)
 ---
 
 ## Computational Performance
