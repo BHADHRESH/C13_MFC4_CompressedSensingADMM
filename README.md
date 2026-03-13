@@ -437,24 +437,14 @@ $$
 
 ### z-Update Derivation
 
-The constraint introduced by variable splitting is
+After computing $x^{k+1}$ and $y^{k+1}$, the multiplier is updated.
+
+#### 4. Constraint Residual
+
+The equality constraint is
 
 $$
 y = Ax
-$$
-
-The augmented Lagrangian is
-
-$$
-L(x,y,z)
-=
-\frac12 \|y-b\|^2
-+
-\lambda \|x\|_0
-+
-z^T(Ax-y)
-+
-\frac{\rho}{2}\|Ax-y\|^2
 $$
 
 The constraint violation (primal residual) is
@@ -463,19 +453,37 @@ $$
 r^{k+1} = y^{k+1} - Ax^{k+1}
 $$
 
+This measures how much the constraint is violated.
+
+#### 5. Dual Ascent Rule
+
 ADMM updates the multiplier using dual ascent:
 
 $$
 z^{k+1} = z^k + \rho r^{k+1}
 $$
 
-Substituting the residual gives
+#### 6. Substitute Residual
+
+Substitute
 
 $$
-z^{k+1}
-=
-z^k + \rho (y^{k+1} - Ax^{k+1})
+r^{k+1} = y^{k+1} - Ax^{k+1}
 $$
+
+so the update becomes
+
+$$
+z^{k+1} = z^k + \rho (y^{k+1} - Ax^{k+1})
+$$
+
+#### 7. Final z-Update
+
+$$
+z^{k+1} = z^k + \rho (y^{k+1} - Ax^{k+1})
+$$
+
+This is the multiplier update used in the **ILSTAT-ADMM algorithm**.
 
 ### Demonstration Using a Toy Example
 
