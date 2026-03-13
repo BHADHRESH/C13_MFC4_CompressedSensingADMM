@@ -192,7 +192,6 @@ u^Tu + \frac{2}{\rho}z^{kT}u =
 \left\|\frac{z^k}{\rho}\right\|^2
 $$
 
-The second term is constant with respect to $x$, so it can be ignored.
 
 #### Multiply Back by $\frac{\rho}{2}$
 
@@ -227,9 +226,11 @@ $$
 Expanding gives
 
 $$
+\begin{aligned}
 \frac{\rho}{2}\left\|u+\frac{z^k}{\rho}\right\|^2
 -
 \frac{\rho}{2}\left\|\frac{z^k}{\rho}\right\|^2
+\end{aligned}
 $$
 
 The second term does **not depend on $x$**, so it is constant.
@@ -255,9 +256,11 @@ $$
 gives
 
 $$
-u + \frac{z^k}{\rho}
-=
-Ax - y^k + \frac{z^k}{\rho}
+\begin{aligned}
+\frac{\rho}{2}\left\|u+\frac{z^k}{\rho}\right\|^2
+-
+\frac{\rho}{2}\left\|\frac{z^k}{\rho}\right\|^2
+\end{aligned}
 $$
 
 Rewrite as
