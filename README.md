@@ -331,7 +331,7 @@ $$
 \frac{\rho}{2}
 \left(
 \lVert u+\frac{z^k}{\rho}\rVert ^2 -
-\left\|\frac{z^k}{\rho}\right\|^2
+\lVert \frac{z^k}{\rho}\rVert^2
 \right)
 $$
 
@@ -342,7 +342,7 @@ $$
 Expanding the expression gives
 
 $$
-\frac{\rho}{2}\|u + \frac{z^k}{\rho}\|^2 - \frac{\rho}{2}\left\|\frac{z^k}{\rho}\right\|^2
+\frac{\rho}{2}\lVert u + \frac{z^k}{\rho}\rVert^2 - \frac{\rho}{2}\lVert\frac{z^k}{\rho}\rVert^2
 $$
 
 The second term does **not depend on $x$**, so it is constant.
@@ -356,7 +356,7 @@ In optimization, constants do not affect the minimization, so this term can be i
 Thus we keep only
 
 $$
-\frac{\rho}{2}\left\|u + \frac{z^k}{\rho}\right\|^2
+\frac{\rho}{2}\lVert u + \frac{z^k}{\rho}\rVert^2
 $$
 
 Now substitute
@@ -386,7 +386,7 @@ $$
 Therefore the expression becomes
 
 $$
-\frac{\rho}{2}\|Ax - b_k\|^2
+\frac{\rho}{2}\lVert Ax - b_k\rVert^2
 $$
 
 
@@ -395,8 +395,8 @@ Thus
 
 $$
 \begin{aligned}
-z^{kT}(Ax - y^k) + \frac{\rho}{2}\|Ax - y^k\|^2
-&= \frac{\rho}{2}\|Ax - b_k\|^2
+z^{kT}(Ax - y^k) + \frac{\rho}{2}\lVert Ax - y^k\rVert^2
+&= \frac{\rho}{2}\lVert Ax - b_k\rVert^2
 \end{aligned}
 $$
 
@@ -410,7 +410,7 @@ $$
 x^{k+1} =
 \arg\min_x
 \left(
-\frac{\rho}{2}\|Ax - b_k\|^2 + \lambda\|x\|_0
+\frac{\rho}{2}\lVert Ax - b_k\rVert^2 + \lambda||x||0
 \right)
 $$
 
@@ -423,7 +423,7 @@ This is a **sparse least-squares problem**.
 Consider
 
 $$
-f(x) = \|Ax - b_k\|^2
+f(x) = \lVert|Ax - b_k\rVert^2
 $$
 
 The gradient is
@@ -454,7 +454,7 @@ where
 
 ### 9. Enforcing Sparsity
 
-The sparsity term $\lambda |x|_0$ is handled using a shrinkage operator:
+The sparsity term $\lambda ||x||_0$ is handled using a shrinkage operator:
 
 $$
 x_{k+1} = \text{shrink}(x_{\text{temp}})
@@ -487,10 +487,10 @@ From the augmented Lagrangian
 
 $$
 L(x,y,z) =
-\frac{1}{2}|y-b|^2 + \lambda |x|_0 + z^T(Ax-y) + \frac{\rho}{2}|Ax-y|^2
+\frac{1}{2}|y-b|^2 + \lambda ||x||_0 + z^T(Ax-y) + \frac{\rho}{2}\lVert Ax-y\rVert^2
 $$
 
-the term $\lambda |x|_0$ does not depend on $y$, so it can be ignored.
+the term $\lambda \lVert x \rVert _0$ does not depend on $y$, so it can be ignored.
 
 Thus the $y$-subproblem becomes
 
