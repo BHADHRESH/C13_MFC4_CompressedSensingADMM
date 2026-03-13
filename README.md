@@ -672,8 +672,8 @@ Results observed
 | Optimization Method | ILSTAT with ADMM framework |
 | Sparsity Technique | Limited Shrinkage Thresholding (LST) |
 | Test Images | Tree, Coins, Cameraman |
-| Evaluation Metrics | PSNR and SSIM |
-| Baseline Method | Wiener Filter |
+| Evaluation Metrics | PSNR |
+| Method comparsion | Wiener Filter |
 | Result | ILSTAT-ADMM achieves higher PSNR and improved visual reconstruction |
 
 ---
