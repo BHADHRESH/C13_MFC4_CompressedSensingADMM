@@ -662,6 +662,21 @@ Results observed
 </p>
 
 ---
+## Project Summary
+
+| Component | Description |
+|-----------|-------------|
+| Problem | Image reconstruction from blurred and noisy observations |
+| Model | \( b = Ax + n \) where \(A\) represents the blur operator |
+| Approach | Compressed sensing based sparse reconstruction |
+| Optimization Method | ILSTAT with ADMM framework |
+| Sparsity Technique | Limited Shrinkage Thresholding (LST) |
+| Test Images | Tree, Coins, Cameraman |
+| Evaluation Metrics | PSNR and SSIM |
+| Baseline Method | Wiener Filter |
+| Result | ILSTAT-ADMM achieves higher PSNR and improved visual reconstruction |
+
+---
 
 ## Computational Performance
 
