@@ -275,20 +275,7 @@ $$
 \frac{\rho}{2}\|Ax - b_k\|^2
 $$
 
-Substituting back $u = Ax - y^k$:
 
-$$
-\begin{aligned}
-Ax - y^k + \frac{z^k}{\rho}
-&= Ax - \left(y^k - \frac{z^k}{\rho}\right)
-\end{aligned}
-$$
-
-Define
-
-$$
-b_k = y^k - \frac{z^k}{\rho}
-$$
 
 Thus
 
