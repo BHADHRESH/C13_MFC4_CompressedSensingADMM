@@ -354,7 +354,92 @@ x_k - \frac{1}{v} A^T (Ax_k - b_k)
 \right)
 $$
 
+### y-Update Derivation
 
+In ADMM, the $y$-update is obtained by minimizing the augmented Lagrangian while keeping $x^{k+1}$ and $z^k$ fixed:
+
+$$
+y^{k+1} = \arg\min_y L(x^{k+1},y,z^k)
+$$
+
+From the augmented Lagrangian
+
+$$
+L(x,y,z)
+=
+\frac{1}{2}|y-b|^2
++
+\lambda |x|_0
++
+z^T(Ax-y)
++
+\frac{\rho}{2}|Ax-y|^2
+$$
+
+the term $\lambda |x|_0$ does not depend on $y$, so it can be ignored.
+
+Thus the $y$-subproblem becomes
+
+$$
+\min_y
+\left(
+\frac12 |y-b|^2
++
+z^{kT}(Ax^{k+1}-y)
++
+\frac{\rho}{2}|Ax^{k+1}-y|^2
+\right)
+$$
+
+---
+
+### Taking the Gradient
+
+Derivative of each term with respect to $y$:
+
+$$
+\nabla_y \left(\frac12 |y-b|^2\right) = y-b
+$$
+
+$$
+\nabla_y \left(z^{kT}(Ax^{k+1}-y)\right) = -z^k
+$$
+
+$$
+\nabla_y \left(\frac{\rho}{2}|Ax^{k+1}-y|^2\right) = -\rho(Ax^{k+1}-y)
+$$
+
+---
+
+### Set Gradient to Zero
+
+$$
+(y-b) - z^k - \rho(Ax^{k+1}-y) = 0
+$$
+
+---
+
+### Rearranging Terms
+
+$$
+y - b - z^k - \rho Ax^{k+1} + \rho y = 0
+$$
+
+Group the $y$ terms:
+
+$$
+(1+\rho)y = b + z^k + \rho Ax^{k+1}
+$$
+
+---
+
+### Final y-Update
+
+$$
+y^{k+1}
+=
+\frac{b + z^k + \rho Ax^{k+1}}{1+\rho}
+$$
 
 ### Demonstration Using a Toy Example
 
