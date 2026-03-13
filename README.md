@@ -197,9 +197,10 @@ The second term is constant with respect to $x$, so it can be ignored.
 Substituting back $u = Ax - y^k$:
 
 $$
+\begin{aligned}
 Ax - y^k + \frac{z^k}{\rho}
-=
-Ax - \left(y^k - \frac{z^k}{\rho}\right)
+&= Ax - \left(y^k - \frac{z^k}{\rho}\right)
+\end{aligned}
 $$
 
 Define
@@ -211,9 +212,10 @@ $$
 Thus
 
 $$
+\begin{aligned}
 z^{kT}(Ax - y^k) + \frac{\rho}{2}\|Ax - y^k\|^2
-=
-\frac{\rho}{2}\|Ax - b_k\|^2
+&= \frac{\rho}{2}\|Ax - b_k\|^2
+\end{aligned}
 $$
 
 ---
