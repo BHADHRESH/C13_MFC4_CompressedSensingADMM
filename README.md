@@ -205,8 +205,8 @@ Substituting the completed square expression
 
 $$
 u^Tu + \frac{2}{\rho}z^{kT}u =
-\left\|u+\frac{z^k}{\rho}\right\|^2 -
-\left\|\frac{z^k}{\rho}\right\|^2
+\left\||u+\frac{z^k}{\rho}\right\||^2 -
+\left\||\frac{z^k}{\rho}\right\||^2
 $$
 
 gives
@@ -214,19 +214,19 @@ gives
 $$
 \frac{\rho}{2}
 \left(
-\left\|u+\frac{z^k}{\rho}\right\|^2 -
-\left\|\frac{z^k}{\rho}\right\|^2
+\left\||u+\frac{z^k}{\rho}\right\||^2 -
+\left\||\frac{z^k}{\rho}\right\||^2
 \right)
 $$
 
 ---
 
-#### Step 4.4: Separate the Terms
+#### Separate the Terms
 
 Expanding the expression gives
 
 $$
-\frac{\rho}{2}\|u + \frac{z^k}{\rho}\|^2 - \frac{\rho}{2}\left\|\frac{z^k}{\rho}\right\|^2
+\frac{\rho}{2}\||u + \frac{z^k}{\rho}\||^2 - \frac{\rho}{2}\left\||\frac{z^k}{\rho}\right\||^2
 $$
 
 The second term does **not depend on $x$**, so it is constant.
@@ -235,12 +235,12 @@ In optimization, constants do not affect the minimization, so this term can be i
 
 ---
 
-#### Step 4.5: Final Simplified Form
+#### Final Simplified Form
 
 Thus we keep only
 
 $$
-\frac{\rho}{2}\left\|u + \frac{z^k}{\rho}\right\|^2
+\frac{\rho}{2}\left\||u + \frac{z^k}{\rho}\right\||^2
 $$
 
 Now substitute
@@ -279,8 +279,8 @@ Thus
 
 $$
 \begin{aligned}
-z^{kT}(Ax - y^k) + \frac{\rho}{2}\|Ax - y^k\|^2
-&= \frac{\rho}{2}\|Ax - b_k\|^2
+z^{kT}(Ax - y^k) + \frac{\rho}{2}\||Ax - y^k\||^2
+&= \frac{\rho}{2}\||Ax - b_k\||^2
 \end{aligned}
 $$
 
@@ -294,7 +294,7 @@ $$
 x^{k+1} =
 \arg\min_x
 \left(
-\frac{\rho}{2}\|Ax - b_k\|^2 + \lambda\|x\|_0
+\frac{\rho}{2}\||Ax - b_k\||^2 + \lambda\||x\||_0
 \right)
 $$
 
