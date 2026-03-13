@@ -151,7 +151,7 @@ The term $\frac{1}{2}||y-b||^2$ is removed since it does not depend on $x$.
 Now consider the terms
 
 $$
-z^{kT}(Ax - y^k) + \frac{\rho}{2}\|Ax - y^k\|^2
+z^{kT}(Ax - y^k) + \frac{\rho}{2}\lvert Ax - y^k \rvert^2
 $$
 
 Let
@@ -175,7 +175,7 @@ $$
 Using the identity
 
 $$
-\|u + a\|^2 = u^Tu + 2a^Tu + a^Ta
+\lvert u + a \rvert^2 = u^Tu + 2a^Tu + a^Ta
 $$
 
 choose
@@ -188,10 +188,11 @@ so that
 
 $$
 u^Tu + \frac{2}{\rho}z^{kT}u =
-\lVert u + \frac{z^k}{\rho} \rVert^2 -
-\|\frac{z^k}{\rho}\|^2
+\lvert u + \frac{z^k}{\rho} \rvert^2 -
+\lvert \frac{z^k}{\rho} \rvert^2
 $$
 
+---
 
 #### Multiply Back by $\frac{\rho}{2}$
 
@@ -201,19 +202,13 @@ $$
 \frac{\rho}{2}\left(u^Tu + \frac{2}{\rho}z^{kT}u\right)
 $$
 
-Substituting the completed square expression
-
-$$
-u^Tu + \frac{2}{\rho}z^{kT}u = \left\|u + \frac{z^k}{\rho}\right\|^2 - \left\|\frac{z^k}{\rho}\right\|^2
-$$
-
-gives
+Substituting the completed square expression gives
 
 $$
 \frac{\rho}{2}
 \left(
-\left\|u+\frac{z^k}{\rho}\right\|^2 -
-\left\|\frac{z^k}{\rho}\right\|^2
+\lvert u+\frac{z^k}{\rho}\rvert^2 -
+\lvert\frac{z^k}{\rho}\rvert^2
 \right)
 $$
 
@@ -224,7 +219,9 @@ $$
 Expanding the expression gives
 
 $$
-\frac{\rho}{2}\|u + \frac{z^k}{\rho}\|^2 - \frac{\rho}{2}\left\|\frac{z^k}{\rho}\right\|^2
+\frac{\rho}{2}\lvert u + \frac{z^k}{\rho}\rvert^2
+-
+\frac{\rho}{2}\lvert\frac{z^k}{\rho}\rvert^2
 $$
 
 The second term does **not depend on $x$**, so it is constant.
@@ -238,7 +235,7 @@ In optimization, constants do not affect the minimization, so this term can be i
 Thus we keep only
 
 $$
-\frac{\rho}{2}\left\|u + \frac{z^k}{\rho}\right\|^2
+\frac{\rho}{2}\lvert u + \frac{z^k}{\rho}\rvert^2
 $$
 
 Now substitute
@@ -268,18 +265,15 @@ $$
 Therefore the expression becomes
 
 $$
-\frac{\rho}{2}\|Ax - b_k\|^2
+\frac{\rho}{2}\lvert Ax - b_k\rvert^2
 $$
-
-
-
+ 
 Thus
 
 $$
-\begin{aligned}
-z^{kT}(Ax - y^k) + \frac{\rho}{2}\|Ax - y^k\|^2
-&= \frac{\rho}{2}\|Ax - b_k\|^2
-\end{aligned}
+z^{kT}(Ax - y^k) + \frac{\rho}{2}\lvert Ax - y^k\rvert^2
+=
+\frac{\rho}{2}\lvert Ax - b_k\rvert^2
 $$
 
 ---
