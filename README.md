@@ -435,6 +435,48 @@ y^{k+1} =
 \frac{b + z^k + \rho Ax^{k+1}}{1+\rho}
 $$
 
+### z-Update Derivation
+
+The constraint introduced by variable splitting is
+
+$$
+y = Ax
+$$
+
+The augmented Lagrangian is
+
+$$
+L(x,y,z)
+=
+\frac12 \|y-b\|^2
++
+\lambda \|x\|_0
++
+z^T(Ax-y)
++
+\frac{\rho}{2}\|Ax-y\|^2
+$$
+
+The constraint violation (primal residual) is
+
+$$
+r^{k+1} = y^{k+1} - Ax^{k+1}
+$$
+
+ADMM updates the multiplier using dual ascent:
+
+$$
+z^{k+1} = z^k + \rho r^{k+1}
+$$
+
+Substituting the residual gives
+
+$$
+z^{k+1}
+=
+z^k + \rho (y^{k+1} - Ax^{k+1})
+$$
+
 ### Demonstration Using a Toy Example
 
 A synthetic sparse signal with a small number of non-zero elements is generated. Random linear measurements are obtained using a sensing matrix. The ADMM-based algorithm with LST is applied iteratively to reconstruct the sparse signal. The reconstructed signal is compared with the original signal to verify recovery performance.
