@@ -195,7 +195,7 @@ $$
 
 #### Multiply Back by $\frac{\rho}{2}$
 
-Recall that we obtained
+We obtained
 
 $$
 \frac{\rho}{2}\left(u^Tu + \frac{2}{\rho}z^{kT}u\right)
@@ -332,6 +332,27 @@ where
 - $x_k$ is the estimate at iteration $k$
 - $v$ controls the step size.
 
+### 9. Enforcing Sparsity
+
+The sparsity term $\lambda |x|_0$ is handled using a shrinkage operator:
+
+$$
+x_{k+1} = \text{shrink}(x_{\text{temp}})
+$$
+
+This step removes small coefficients and preserves significant ones.
+
+---
+
+### 10. Final x-Update
+
+$$
+x_{k+1} =
+\text{shrink}
+\left(
+x_k - \frac{1}{v} A^T (Ax_k - b_k)
+\right)
+$$
 
 ### Demonstration Using a Toy Example
 
