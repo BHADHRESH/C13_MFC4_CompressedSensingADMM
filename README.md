@@ -410,7 +410,7 @@ $$
 x^{k+1} =
 \arg\min_x
 \left(
-\frac{\rho}{2}\lVert Ax - b_k\rVert^2 + \lambda||x||0
+\frac{\rho}{2}\lVert Ax - b_k\rVert^2 + \lambda \lVert x\rVert0
 \right)
 $$
 
@@ -423,7 +423,7 @@ This is a **sparse least-squares problem**.
 Consider
 
 $$
-f(x) = \lVert|Ax - b_k\rVert^2
+f(x) = \lVert Ax - b_k\rVert^2
 $$
 
 The gradient is
@@ -454,7 +454,7 @@ where
 
 ### 9. Enforcing Sparsity
 
-The sparsity term $\lambda ||x||_0$ is handled using a shrinkage operator:
+The sparsity term $\lambda \lVert x\rVert _0$ is handled using a shrinkage operator:
 
 $$
 x_{k+1} = \text{shrink}(x_{\text{temp}})
@@ -487,7 +487,7 @@ From the augmented Lagrangian
 
 $$
 L(x,y,z) =
-\frac{1}{2}|y-b|^2 + \lambda ||x||_0 + z^T(Ax-y) + \frac{\rho}{2}\lVert Ax-y\rVert^2
+\frac{1}{2}\lVert y-b\rVert^2 + \lambda \lVert x\rVert _0 + z^T(Ax-y) + \frac{\rho}{2}\lVert Ax-y\rVert^2
 $$
 
 the term $\lambda \lVert x \rVert _0$ does not depend on $y$, so it can be ignored.
@@ -497,11 +497,11 @@ Thus the $y$-subproblem becomes
 $$
 \min_y
 \left(
-\frac12 |y-b|^2
+\frac12 \lVert y-b\rVert^2
 +
 z^{kT}(Ax^{k+1}-y)
 +
-\frac{\rho}{2}|Ax^{k+1}-y|^2
+\frac{\rho}{2}\lVert Ax^{k+1}-y\rVert^2
 \right)
 $$
 
@@ -512,7 +512,7 @@ $$
 Derivative of each term with respect to $y$:
 
 $$
-\nabla_y \left(\frac12 |y-b|^2\right) = y-b
+\nabla_y \left(\frac12 \lVert y-b|^2\rVert) = y-b
 $$
 
 $$
