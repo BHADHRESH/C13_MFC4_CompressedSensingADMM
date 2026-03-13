@@ -68,7 +68,7 @@ Compressed sensing allows signal reconstruction using fewer measurements by expl
 The general compressed sensing reconstruction problem is formulated as
 
 $$
-\min_x \|Ax - b\|^2 + \lambda \|x\|_0
+\min_x \lVert Ax - b\rVert^2 + \lambda \lVert x\rVert _0
 $$
 
 where
@@ -151,7 +151,7 @@ Compressed sensing exploits sparsity to recover signals from fewer measurements.
 The reconstruction problem is written as
 
 $$
-\min_x \|Ax - b\|^2 + \lambda \|x\|_0
+\min_x \lVert Ax - b\rVert^2 + \lambda \lVert x\rVert _0
 $$
 
 The first term ensures data consistency while the second term enforces sparsity.
@@ -178,7 +178,7 @@ The first term ensures data consistency while the second term enforces sparsity.
 The image reconstruction problem is formulated as
 
 $$
-\min_x ||Ax - b||^2 + \lambda ||x||_0
+\min_x \lVert Ax - b\rVert^2 + \lambda \lVert x\rVert _0
 $$
 
 where
@@ -203,7 +203,7 @@ $$
 The optimization becomes
 
 $$
-\min_{x,y} \frac{1}{2} ||y - b||^2 + \lambda ||x||_0
+\min_{x,y} \frac{1}{2} \lVert y - b\rVert^2 + \lambda \lVert x\rVert _0
 $$
 
 subject to
@@ -225,13 +225,13 @@ To enforce the constraint $y = Ax$, the augmented Lagrangian is constructed:
 
 $$
 L(x,y,z) =
-\frac{1}{2} ||y - b||^2
+\frac{1}{2} \lVert y - b\rVert^2
 +
-\lambda ||x||_0
+\lambda \lVert x\rVert _0
 +
 z^T (Ax - y)
 +
-\frac{\rho}{2} ||Ax - y||^2
+\frac{\rho}{2} \lVert Ax - y\rVert^2
 $$
 
 where
@@ -254,15 +254,15 @@ Substituting the Lagrangian gives
 $$
 \min_x
 \left(
-\lambda ||x||_0
+\lambda \lVert x\rVert _0
 +
 z^{kT}(Ax - y^k)
 +
-\frac{\rho}{2} ||Ax - y^k||^2
+\frac{\rho}{2} \lVert Ax - y^k\rVert^2
 \right)
 $$
 
-The term $\frac{1}{2}||y-b||^2$ is removed since it does not depend on $x$.
+The term $\frac{1}{2}\lVert y-b\rVert^2$ is removed since it does not depend on $x$.
 
 ### 5. Combining the Linear and Quadratic Terms
 
@@ -293,7 +293,7 @@ $$
 Using the identity
 
 $$
-||u + a||^2 = u^Tu + 2a^Tu + a^Ta
+\lVert u + a\rVert^2 = u^Tu + 2a^Tu + a^Ta
 $$
 
 choose
@@ -410,7 +410,7 @@ $$
 x^{k+1} =
 \arg\min_x
 \left(
-\frac{\rho}{2}\lVert Ax - b_k\rVert^2 + \lambda \lVert x\rVert0
+\frac{\rho}{2}\lVert Ax - b_k\rVert^2 + \lambda \lVert x\rVert _0
 \right)
 $$
 
@@ -520,7 +520,7 @@ $$
 $$
 
 $$
-\nabla_y \left(\frac{\rho}{2}|Ax^{k+1}-y|^2\right) = -\rho(Ax^{k+1}-y)
+\nabla_y \left(\frac{\rho}{2}\lVert Ax^{k+1}-y\rVert^2\right) = -\rho(Ax^{k+1}-y)
 $$
 
 ---
@@ -638,7 +638,17 @@ Higher PSNR indicates better reconstruction quality.
 - Sensitivity of the reconstruction to the LST threshold parameter (λ) is analyzed, showing that proper parameter selection is important.
 - The observed results are consistent with the expected behavior discussed in the base paper.
 
+## Tree Image Reconstruction
+
+![Tree Reconstruction](output_and_results/result_2.png)
 ---
+
+## Computational Performance
+
+- Platform : Laptop
+- Hardware : cpu
+- time taken for execution : 65.96 seconds
+- Programming language : Matlab
 
 ## Future Plans
 
