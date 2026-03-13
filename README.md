@@ -41,6 +41,37 @@ Compressed sensing allows signal reconstruction using fewer measurements by expl
 
 ---
 
+## Connection Between Compressed Sensing and Image Deblurring
+
+The general compressed sensing reconstruction problem is formulated as
+
+$$
+\min_x \|Ax - b\|^2 + \lambda \|x\|_0
+$$
+
+where
+
+- $x$ is the sparse signal to be recovered  
+- $A$ is the measurement operator  
+- $b$ is the observed measurement vector  
+
+In the context of image deblurring, the blur operator acts as the measurement operator.  
+The degradation model of a blurred image is
+
+$$
+b = Ax + n
+$$
+
+where
+
+- $x$ is the original sharp image  
+- $A$ is the blur operator (convolution kernel)  
+- $b$ is the observed blurred image  
+- $n$ represents noise.
+
+Recovering the original image from blurred observations can therefore be formulated as a compressed sensing reconstruction problem.  
+The ILSTAT-ADMM algorithm is used to solve this optimization problem while enforcing sparsity using Limited Shrinkage Thresholding (LST).
+
 ## Methodology
 
 ### Mathematical Techniques Used
@@ -435,11 +466,13 @@ y^{k+1} =
 \frac{b + z^k + \rho Ax^{k+1}}{1+\rho}
 $$
 
+---
+
 ### z-Update Derivation
 
 After computing $x^{k+1}$ and $y^{k+1}$, the multiplier is updated.
 
-#### 4. Constraint Residual
+#### Constraint Residual
 
 The equality constraint is
 
@@ -455,7 +488,7 @@ $$
 
 This measures how much the constraint is violated.
 
-#### 5. Dual Ascent Rule
+#### Dual Ascent Rule
 
 ADMM updates the multiplier using dual ascent:
 
@@ -463,7 +496,7 @@ $$
 z^{k+1} = z^k + \rho r^{k+1}
 $$
 
-#### 6. Substitute Residual
+#### Substitute Residual
 
 Substitute
 
@@ -477,7 +510,7 @@ $$
 z^{k+1} = z^k + \rho (y^{k+1} - Ax^{k+1})
 $$
 
-#### 7. Final z-Update
+#### Final z-Update
 
 $$
 z^{k+1} = z^k + \rho (y^{k+1} - Ax^{k+1})
