@@ -52,6 +52,100 @@ Compressed sensing allows signal reconstruction using fewer measurements by expl
 - Gradient-based iterative updates
 - ℓ₂-norm based reconstruction error analysis
 
+### ADMM Formulation
+### x-Update Derivation (ILSTAT-ADMM)
+
+#### 1. Optimization Problem
+
+The image reconstruction problem is formulated as
+
+$$
+\min_x ||Ax - b||^2 + \lambda ||x||_0
+$$
+
+where
+
+- $x$ – original image  
+- $A$ – blur operator  
+- $b$ – observed blurred image  
+- $\lambda$ – sparsity regularization parameter  
+
+The first term enforces **data fidelity**, while the second promotes **sparsity**.
+
+---
+
+#### 2. Variable Splitting
+
+Introduce an auxiliary variable
+
+$$
+y = Ax
+$$
+
+The optimization becomes
+
+$$
+\min_{x,y} \frac{1}{2} ||y - b||^2 + \lambda ||x||_0
+$$
+
+subject to
+
+$$
+y = Ax
+$$
+
+This separates
+
+- the **data fidelity term** (depends on $y$)
+- the **sparsity term** (depends on $x$).
+
+---
+
+#### 3. Augmented Lagrangian
+
+To enforce the constraint $y = Ax$, the augmented Lagrangian is constructed:
+
+$$
+L(x,y,z) =
+\frac{1}{2} ||y - b||^2
++
+\lambda ||x||_0
++
+z^T (Ax - y)
++
+\frac{\rho}{2} ||Ax - y||^2
+$$
+
+where
+
+- $z$ is the Lagrange multiplier  
+- $\rho$ is the penalty parameter.
+
+---
+
+#### 4. x-Update Subproblem
+
+In ADMM, the $x$ update is obtained by minimizing the Lagrangian while fixing $y^k$ and $z^k$:
+
+$$
+x^{k+1} = \arg\min_x L(x, y^k, z^k)
+$$
+
+Substituting the Lagrangian gives
+
+$$
+\min_x
+\left(
+\lambda ||x||_0
++
+z^{kT}(Ax - y^k)
++
+\frac{\rho}{2} ||Ax - y^k||^2
+\right)
+$$
+
+The term $\frac{1}{2}||y-b||^2$ is removed since it does not depend on $x$.
+
 ### Demonstration Using a Toy Example
 
 A synthetic sparse signal with a small number of non-zero elements is generated. Random linear measurements are obtained using a sensing matrix. The ADMM-based algorithm with LST is applied iteratively to reconstruct the sparse signal. The reconstructed signal is compared with the original signal to verify recovery performance.
