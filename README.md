@@ -72,6 +72,17 @@ where
 Recovering the original image from blurred observations can therefore be formulated as a compressed sensing reconstruction problem.  
 The ILSTAT-ADMM algorithm is used to solve this optimization problem while enforcing sparsity using Limited Shrinkage Thresholding (LST).
 
+## Difference Between Blur and Noise
+
+| Property | Blur | Noise |
+|---------|------|------|
+| Cause | Imperfect imaging system, motion, defocus | Random disturbances during image acquisition |
+| Mathematical Model | Convolution with blur kernel | Additive random signal |
+| Equation | $b = Ax$ | $b = Ax + n$ |
+| Effect on Image | Smooth edges and remove high-frequency details | Random pixel fluctuations |
+| Appearance | Smooth or out-of-focus image | Grainy image |
+| Example Types | Gaussian blur, motion blur, defocus blur | Gaussian noise, salt & pepper noise, Poisson noise |
+
 ## Methodology
 
 ### Mathematical Techniques Used
